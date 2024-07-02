@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Animator anim;
     private Vector3 dir;
+
+    private bool dead = false;
     [SerializeField] private int speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -41,8 +44,12 @@ public class PlayerController : MonoBehaviour
                 Jump();
         }
 
-        if (controller.isGrounded)
-            anim.SetTrigger("isRunning");
+        
+        if (Input.GetKeyDown(KeyCode.W))
+            {
+                Dead();
+            }
+
 
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
         if (lineToMove == 0)
@@ -63,14 +70,21 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         dir.y = jumpForce;
-        anim.SetTrigger("isJumping");
+        anim.SetBool("Jump",true);
+    }
+
+    private void Dead()
+    {
+        dead = true;
+        anim.SetBool("Jump", false);
+        anim.SetBool("Dead", true);
     }
 
     void FixedUpdate()
     {
         dir.z = speed;
         dir.y += gravity * Time.fixedDeltaTime;
-        controller.Move(dir * Time.fixedDeltaTime);
+        if(!dead) controller.Move(dir * Time.fixedDeltaTime);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
