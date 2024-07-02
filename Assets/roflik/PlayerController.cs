@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private bool dead = false;
     [SerializeField] private int speed;
+    [SerializeField] private const int maxSpeed = 30;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
     //[SerializeField] private GameObject losePanel;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        StartCoroutine(SpeedIncrease());
     }
 
     private void Update()
@@ -121,6 +123,27 @@ public class PlayerController : MonoBehaviour
         {
             //losePanel.SetActive(true);
             //Time.timeScale = 0;
+        }
+    }
+    
+    //нарастание скорости
+    private IEnumerator SpeedIncrease()
+    {
+        yield return new WaitForSeconds(5);
+        if (speed < maxSpeed)
+        {
+            speed += 3;
+            StartCoroutine(SpeedIncrease());
+        }
+    }
+
+    //подбор монетки
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Coin")
+        {
+            Debug.Log("+1 coin");
+            Destroy(other.gameObject);
         }
     }
 }
