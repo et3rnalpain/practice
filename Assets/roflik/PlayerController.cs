@@ -50,6 +50,11 @@ public class PlayerController : MonoBehaviour
                 Dead();
             }
 
+             if (Input.GetKeyDown(KeyCode.S))
+            {
+                Roll();
+            }
+
 
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
         if (lineToMove == 0)
@@ -65,12 +70,18 @@ public class PlayerController : MonoBehaviour
             controller.Move(moveDir);
         else
             controller.Move(diff);
+
+        if (Physics.Raycast(transform.position,Vector3.down,0.5f))
+        {
+            anim.SetBool("isGrounded", true);
+        }
     }
 
     private void Jump()
     {
         dir.y = jumpForce;
         anim.SetBool("Jump",true);
+        anim.SetBool("isGrounded", false);
     }
 
     private void Dead()
@@ -80,11 +91,28 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Dead", true);
     }
 
+    private void Roll()
+    {
+        anim.SetBool("Roll", true);
+        anim.SetBool("isGrounded", false);
+    }
+
     void FixedUpdate()
     {
         dir.z = speed;
         dir.y += gravity * Time.fixedDeltaTime;
         if(!dead) controller.Move(dir * Time.fixedDeltaTime);
+    }
+
+    private void StopJump() 
+    {
+        anim.SetBool("Jump", false);
+    }
+
+    private void StopRoll()
+    {
+        anim.SetBool("Roll", false);
+        anim.SetBool("isGrounded",true);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
