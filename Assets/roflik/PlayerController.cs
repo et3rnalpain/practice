@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
+    private Animator anim;
     private Vector3 dir;
+
+    private bool dead = false;
     [SerializeField] private int speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
@@ -16,6 +19,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -38,6 +42,12 @@ public class PlayerController : MonoBehaviour
                 Jump();
         }
 
+    if (Input.GetKeyDown(KeyCode.W))
+            {
+                Dead();
+            }
+
+
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
         if (lineToMove == 0)
             targetPosition += Vector3.left * lineDistance;
@@ -45,17 +55,27 @@ public class PlayerController : MonoBehaviour
             targetPosition += Vector3.right * lineDistance;
 
         transform.position = targetPosition;
+
+        //if(transform.position.y < 0.1) anim.SetBool("Jump",false);
     }
 
     private void Jump()
     {
         dir.y = jumpForce;
+        anim.SetBool("Jump",true);
+    }
+
+    private void Dead()
+    {
+        dead = true;
+        anim.SetBool("Jump", false);
+        anim.SetBool("Dead", true);
     }
 
     void FixedUpdate()
     {
         dir.z = speed;
         dir.y += gravity * Time.fixedDeltaTime;
-        controller.Move(dir * Time.fixedDeltaTime);
+        if(!dead) controller.Move(dir * Time.fixedDeltaTime);
     }
 }
