@@ -12750,6 +12750,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colobus_LOD0
       objectReference: {fileID: 0}
+    - target: {fileID: 3748359892381204692, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       propertyPath: m_Controller
       value: 
@@ -15639,7 +15643,7 @@ GameObject:
   - component: {fileID: 1066591239}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
