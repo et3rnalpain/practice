@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
                 Dead();
             }
 
-             if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
             {
                 Roll();
             }
@@ -73,10 +73,7 @@ public class PlayerController : MonoBehaviour
         else
             controller.Move(diff);
 
-        if (Physics.Raycast(transform.position,Vector3.down,0.5f))
-        {
-            anim.SetBool("isGrounded", true);
-        }
+
     }
 
     private void Jump()
@@ -104,11 +101,17 @@ public class PlayerController : MonoBehaviour
         dir.z = speed;
         dir.y += gravity * Time.fixedDeltaTime;
         if(!dead) controller.Move(dir * Time.fixedDeltaTime);
+
+        if (Physics.Raycast(transform.position,Vector3.down,0.5f))
+        {
+            anim.SetBool("isGrounded", true);
+        }
     }
 
     private void StopJump() 
     {
         anim.SetBool("Jump", false);
+        anim.SetBool("isGrounded",true);
     }
 
     private void StopRoll()
