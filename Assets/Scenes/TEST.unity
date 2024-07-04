@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sha: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
-  mat: {fileID: 305982048}
+  mat: {fileID: 290570411}
   flatLut: {fileID: 2800000, guid: ad6e386de0e0fb14096d245400d241d3, type: 3}
   bayerTexture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
   ColorBleed: -1.15
@@ -500,7 +500,7 @@ MonoBehaviour:
   player: {fileID: 1141700289}
   pointText: {fileID: 259813450}
   pointMultiplier: 1
---- !u!21 &305982048
+--- !u!21 &290570411
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -1337,6 +1337,7 @@ MonoBehaviour:
   - {fileID: 8403448171901162659, guid: 3b3d904e9bce95749a6110ab5e688098, type: 3}
   - {fileID: 6322564270149538244, guid: fcfdc7eee7216324b8414371a3ad4bed, type: 3}
   - {fileID: 2222591934994550410, guid: c5298f73aafbd114cae4538770ea7574, type: 3}
+  - {fileID: 2962471838866436057, guid: 9f2d396b814cfd14fb059492c76d103d, type: 3}
   player: {fileID: 1141700285}
   startcount: 3
   spawnpos: 0
