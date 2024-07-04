@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private const int maxSpeed = 20;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
+
+    [SerializeField] private TMP_Text coinsText;
     //[SerializeField] private GameObject losePanel;
+    private int coins;
 
     private int lineToMove = 1;
     public float lineDistance = 4; 
@@ -145,7 +148,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin")
         {
-            Debug.Log("+1 coin");
+            coins++;
+            coinsText.text = coins.ToString();
             Destroy(other.gameObject);
         }
     }
