@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
         Ray ray = new Ray(fr,new Vector3(0,0,1.5f));
         if(Physics.Raycast(ray,out RaycastHit hit,1.5f))
         {
-            if(hit.collider && !dead)
+            if(hit.collider && !dead && hit.collider.tag != "Coin" && hit.collider.tag != "boost")
             {
                 Dead();
             }

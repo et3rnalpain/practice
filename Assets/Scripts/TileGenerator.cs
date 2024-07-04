@@ -6,13 +6,15 @@ public class TileGenerator : MonoBehaviour
 {
 
     public GameObject[] prefabs;
-    public GameObject player;
+    public GameObject pl;
+    private GameObject player;
     public int startcount = 2;
     private List<GameObject> tiles = new List<GameObject>();
     public int spawnpos = 0;
     // Start is called before the first frame update
     void Start()
     {
+        player = pl.transform.GetChild(0).gameObject;
         for(int i = 0; i < startcount; i++)
         {
             Spawn(Random.Range(0,prefabs.Length));
