@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta
+guid: 728c090ec80c63b41a772f0eb28d1fef
+DefaultImporter:
+========
 guid: e4b2294cdba1cad4da935c74c80a6797
 PrefabImporter:
+>>>>>>>> 5d579ca76ddbf73ec4dbdefd5bf6c4eff673b363:Assets/PrefabsRunner/5th.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
