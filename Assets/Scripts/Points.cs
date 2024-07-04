@@ -3,14 +3,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour
+public class Points : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private TMP_Text pointText;
+    private int total;
+    public int pointMultiplier;
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        pointText.text = ((int)(player.position.z / 2)).ToString();
+        total += pointMultiplier;
+        pointText.text = total.ToString();
     }
 }
