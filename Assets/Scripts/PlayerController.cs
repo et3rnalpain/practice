@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
     //нарастание скорости
     private IEnumerator SpeedIncrease()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         if (speed < maxSpeed)
         {
             speed += 3;
