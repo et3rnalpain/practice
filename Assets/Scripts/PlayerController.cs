@@ -6,12 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
     private Animator anim;
+    private Points point;
     private Vector3 dir;
 
     private bool dead = false;
     [SerializeField] private int speed;
     [SerializeField] private const int maxSpeed = 20;
     [SerializeField] private float jumpForce;
+
+    [SerializeField] private GameObject scoreText;
     [SerializeField] private float gravity;
 
     [SerializeField] private TMP_Text coinsText;
@@ -25,6 +28,8 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
+        point = scoreText.GetComponent<Points>();
+        point.pointMultiplier = 1;
         anim = GetComponent<Animator>();
         StartCoroutine(SpeedIncrease());
     }
@@ -152,5 +157,19 @@ public class PlayerController : MonoBehaviour
             coinsText.text = coins.ToString();
             Destroy(other.gameObject);
         }
+        if (other.gameObject.tag == "boost")
+        {
+            StartCoroutine(X2Bonus());
+            Destroy(other.gameObject);
+        }
+    }
+
+    private IEnumerator X2Bonus()
+    {
+        point.pointMultiplier = 2;
+
+        yield return new WaitForSeconds(5);
+
+        point.pointMultiplier = 1;
     }
 }
