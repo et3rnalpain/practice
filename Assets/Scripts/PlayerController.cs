@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 
@@ -36,35 +37,42 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            if (lineToMove < 2)
-                lineToMove++;
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            if (lineToMove > 0)
-                lineToMove--;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (controller.isGrounded)
-                Jump();
-        }
-
-        
-        if (Input.GetKeyDown(KeyCode.W))
+        if(!dead){
+            if (Input.GetKeyDown(KeyCode.D))
             {
-                Dead();
+                if (lineToMove < 2)
+                    lineToMove++;
             }
 
-        if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (lineToMove > 0)
+                    lineToMove--;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (controller.isGrounded)
+                    Jump();
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
             {
                 Roll();
             }
-
+        }
+        //СМЭРТ
+        Vector3 fr = gameObject.transform.position;
+        fr.y += 0.5f;
+        Debug.DrawRay(fr, new Vector3(0,0,1.5f),Color.red);
+        Ray ray = new Ray(fr,new Vector3(0,0,1.5f));
+        if(Physics.Raycast(ray,out RaycastHit hit,1.5f))
+        {
+            if(hit.collider && !dead)
+            {
+                Dead();
+            }
+        }
 
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
         if (lineToMove == 0)
