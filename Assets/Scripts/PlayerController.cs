@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private bool dead = false;
     [SerializeField] private int speed;
-    [SerializeField] private const int maxSpeed = 20;
+    [SerializeField] private const int maxSpeed = 30;
     [SerializeField] private float jumpForce;
 
     [SerializeField] private GameObject scoreText;
@@ -172,4 +172,6 @@ public class PlayerController : MonoBehaviour
 
         point.pointMultiplier = 1;
     }
+
+
 }
