@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
         point = scoreText.GetComponent<Points>();
+        coins = PlayerPrefs.GetInt("coins");
+        coinsText.text = coins.ToString();
         point.pointMultiplier = 1;
         anim = GetComponent<Animator>();
         StartCoroutine(SpeedIncrease());
@@ -163,6 +165,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Coin")
         {
             coins++;
+            PlayerPrefs.SetInt("coins", coins);
             coinsText.text = coins.ToString();
             Destroy(other.gameObject);
         }
