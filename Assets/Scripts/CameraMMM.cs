@@ -3,9 +3,12 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private Points point;
+    private Settings setting;
     [SerializeField] private GameObject scoreText;
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject mainmenuPanel;
+
+    [SerializeField] private GameObject settingsPanel;
 
 
     [SerializeField] private Transform player;
@@ -16,10 +19,12 @@ public class CameraController : MonoBehaviour
     {
         gamePanel.SetActive(false);
         point = scoreText.GetComponent<Points>();
+        setting = settingsPanel.GetComponent<Settings>();
         offset = new Vector3(0,2,-4);
         player = pl.transform.GetChild(0).transform;
         animator = GetComponent<Animator>();
         point.isGameStarted = false;
+        settingsPanel.SetActive(false);
     }
 
     void Update()
@@ -37,6 +42,20 @@ public class CameraController : MonoBehaviour
         point.isGameStarted = true;
         gamePanel.SetActive(true);
         mainmenuPanel.SetActive(false);
+    }
+    public void StartSettings()
+    {
+        settingsPanel.SetActive(true);
+        mainmenuPanel.SetActive(false);
+    }
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false);
+        mainmenuPanel.SetActive(true);
+    }
+    public void CloseGame()
+    {
+        Application.Quit();
     }
     void FixedUpdate()
     {
