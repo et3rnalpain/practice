@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (PlayerPrefs.GetInt("coins") != int.Parse(coinsText.text)) coinsText.text = PlayerPrefs.GetInt("coins").ToString();
+        if (PlayerPrefs.GetInt("score") != int.Parse(scoreText.text)) scoreText.text = PlayerPrefs.GetInt("score").ToString();
     }
 }
