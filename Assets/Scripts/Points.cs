@@ -10,10 +10,15 @@ public class Points : MonoBehaviour
     private int total;
     public int pointMultiplier;
 
+    public bool isGameStarted;
+
 
     private void FixedUpdate()
     {
-        total += pointMultiplier;
-        pointText.text = total.ToString();
+        if(isGameStarted)
+        {
+            total += pointMultiplier;
+            pointText.text = total.ToString();
+        }
     }
 }

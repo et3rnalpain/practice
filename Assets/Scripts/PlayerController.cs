@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
             if(hit.collider && !dead && hit.collider.tag != "Coin" && hit.collider.tag != "boost")
             {
                 Dead();
+                point.isGameStarted = false;
             }
         }
 
