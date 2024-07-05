@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private TMP_Text coinsText;
     //[SerializeField] private GameObject losePanel;
     private int coins;
+    private int score;
 
     private int lineToMove = 1;
     public float lineDistance = 4; 
@@ -74,6 +75,8 @@ public class PlayerController : MonoBehaviour
             {
                 Dead();
                 point.isGameStarted = false;
+                score = int.Parse(point.pointText.text.ToString());
+                if(PlayerPrefs.GetInt("score") < score )PlayerPrefs.SetInt("score", score);
             }
         }
 
