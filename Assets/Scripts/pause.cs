@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class pause : MonoBehaviour
 {
+
+    private Points point;
+    [SerializeField] private GameObject scoreText;
     [SerializeField] private GameObject panel;
     private bool isPaused = false; 
     // Start is called before the first frame update
     private void Start()
     {
+        point = scoreText.GetComponent<Points>();
         panel.SetActive(false); 
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) 
+        if (Input.GetKeyDown(KeyCode.Escape) && point.isGameStarted == true) 
         { 
             if (isPaused) 
             { 
