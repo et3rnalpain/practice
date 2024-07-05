@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 528363c5c1cf6a7458140c6851c77b68, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5c57bb9da366e944a8f4ae9be4f413ec, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sha: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
-  mat: {fileID: 1182873638}
+  mat: {fileID: 599469801}
   flatLut: {fileID: 2800000, guid: ad6e386de0e0fb14096d245400d241d3, type: 3}
   bayerTexture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
   ColorBleed: -1.15
@@ -917,6 +917,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415611806}
   m_CullTransparentMesh: 1
+--- !u!21 &599469801
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/DarkBringerRefined_1_2
+  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BayerTex:
+        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Lut2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &627657155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,7 +1320,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 5935400640638122770, guid: 0e24ad3a844a95e49bf1d39a79775241, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8110868623679726397, guid: 0e24ad3a844a95e49bf1d39a79775241, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1866940686}
   m_SourcePrefab: {fileID: 100100000, guid: 0e24ad3a844a95e49bf1d39a79775241, type: 3}
 --- !u!1 &750259038
 GameObject:
@@ -2035,45 +2077,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985017313}
   m_CullTransparentMesh: 1
---- !u!21 &1182873638
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Hidden/DarkBringerRefined_1_2
-  m_Shader: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BayerTex:
-        m_Texture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Lut2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &1297654825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,7 +2324,7 @@ Canvas:
   m_GameObject: {fileID: 1488486588}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 257521298}
   m_PlaneDistance: 0.47
   m_PixelPerfect: 0
@@ -3222,6 +3225,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845917165}
   m_CullTransparentMesh: 1
+--- !u!1 &1866940684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8110868623679726397, guid: 0e24ad3a844a95e49bf1d39a79775241, type: 3}
+  m_PrefabInstance: {fileID: 746353987}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1866940686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866940684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a143e64a217c2043a84d411c247fa63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsText: {fileID: 2081066174}
+  scoreText: {fileID: 985017316}
 --- !u!1 &1950034270
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,13 +3541,13 @@ MonoBehaviour:
   - {fileID: 5017087962881116704, guid: 5aa4e70967f303e4298f8ff966e71c92, type: 3}
   - {fileID: 3110740781907282345, guid: 21a9ce8500087b14885cd19be8992c95, type: 3}
   - {fileID: 7018482247456764077, guid: fe1c570bfe90468468f6bb6ee3a9214b, type: 3}
-  - {fileID: 2704836178343993837, guid: ccc0a78cdd539a442a3d28b33e775616, type: 3}
-  - {fileID: 7409990474510963818, guid: 728c090ec80c63b41a772f0eb28d1fef, type: 3}
+  - {fileID: 7411553827622510783, guid: 61af88120ad28fe4cb8c69e8fb7b656e, type: 3}
+  - {fileID: 8743699259498390196, guid: ec4c0edc1466bd1489d856eb62da2cb3, type: 3}
   - {fileID: 6653809502407392141, guid: d74485da2f48b6a4691e3215cfde92eb, type: 3}
-  - {fileID: 8403448171901162659, guid: 3b3d904e9bce95749a6110ab5e688098, type: 3}
-  - {fileID: 6322564270149538244, guid: fcfdc7eee7216324b8414371a3ad4bed, type: 3}
-  - {fileID: 2962471838866436057, guid: 9f2d396b814cfd14fb059492c76d103d, type: 3}
-  - {fileID: 2881663531440158353, guid: 3135679ef6e51a74a946cc2fc95d6859, type: 3}
+  - {fileID: 1837640414810866506, guid: c2dd79b2deb6a1b4aa7cab99f4eeb1a9, type: 3}
+  - {fileID: 7419962722252969234, guid: d7e0913a9735a8e44a29001eef413e39, type: 3}
+  - {fileID: 85894546851407484, guid: 236ff2f5b199d6d4ea0f9ceea68c608c, type: 3}
+  - {fileID: 3578244521646073367, guid: aa478c77e3c9b574494f957cbcf7d64a, type: 3}
   pl: {fileID: 1952589712}
   startcount: 3
   spawnpos: 0
