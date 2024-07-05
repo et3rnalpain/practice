@@ -2,6 +2,7 @@ using System.Collections;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
                 point.isGameStarted = false;
                 score = int.Parse(point.pointText.text.ToString());
                 if(PlayerPrefs.GetInt("score") < score )PlayerPrefs.SetInt("score", score);
+                StartCoroutine(WaitAftDeath());
             }
         }
 
@@ -186,6 +188,14 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         point.pointMultiplier = 1;
+    }
+
+    private IEnumerator WaitAftDeath()
+    {
+
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
 
