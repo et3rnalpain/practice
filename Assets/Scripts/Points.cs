@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Points : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    [SerializeField] private TMP_Text pointText;
+    [SerializeField] public TMP_Text pointText;
     private int total;
     public int pointMultiplier;
 
