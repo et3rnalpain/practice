@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
     private Animator anim;
-    private Points point;
+    public Points point;
     private Vector3 dir;
 
     private bool dead = false;

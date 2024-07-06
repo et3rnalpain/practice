@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -66,5 +67,11 @@ public class CameraController : MonoBehaviour
     private void StopAnim()
     {
         GetComponent<Animator>().enabled = false;
+    }
+
+    public void goToMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 }
