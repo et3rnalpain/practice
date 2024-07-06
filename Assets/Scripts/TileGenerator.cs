@@ -7,7 +7,7 @@ public class TileGenerator : MonoBehaviour
 
     public GameObject[] prefabs;
     public GameObject pl;
-    private GameObject player;
+    public GameObject player;
     public int startcount = 2;
     private List<GameObject> tiles = new List<GameObject>();
     public int spawnpos = 0;

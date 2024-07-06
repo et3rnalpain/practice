@@ -13,8 +13,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
 
 
-    [SerializeField] private Transform player;
-    [SerializeField] private GameObject pl;
+    public Transform player;
+    public GameObject pl;
     private Vector3 offset;
     private Animator animator;
     void Start()

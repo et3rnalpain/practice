@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
     private Animator anim;
-    public Points point;
+    private Points point;
     private Vector3 dir;
 
     private bool dead = false;
@@ -16,10 +16,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private const int maxSpeed = 30;
     [SerializeField] private float jumpForce;
 
-    [SerializeField] private GameObject scoreText;
+    [SerializeField] public GameObject scoreText;
     [SerializeField] private float gravity;
 
-    [SerializeField] private TMP_Text coinsText;
+    [SerializeField] public TMP_Text coinsText;
     //[SerializeField] private GameObject losePanel;
     private int coins;
     private int score;
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         StartCoroutine(SpeedIncrease());
     }
-
+    
     private void Update()
     {
         if(!dead){
@@ -142,15 +142,6 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetBool("Roll", false);
         anim.SetBool("isGrounded",true);
-    }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.tag == "obstacle")
-        {
-            //losePanel.SetActive(true);
-            //Time.timeScale = 0;
-        }
     }
     
     //нарастание скорости
