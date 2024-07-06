@@ -36,6 +36,7 @@ public class pause : MonoBehaviour
         panel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        AudioListener.volume=0;
     }
 
     public void Resume() 
@@ -43,6 +44,8 @@ public class pause : MonoBehaviour
         panel.SetActive(false); 
         Time.timeScale = 1f; 
         isPaused = false; 
+        AudioListener.volume=1;
+
     } 
 
 }
