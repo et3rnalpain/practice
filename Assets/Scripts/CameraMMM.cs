@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject scoreText;
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject mainmenuPanel;
+    [SerializeField] private GameObject shopPanel;
 
     [SerializeField] private GameObject settingsPanel;
 
@@ -26,6 +27,7 @@ public class CameraController : MonoBehaviour
         animator = GetComponent<Animator>();
         point.isGameStarted = false;
         settingsPanel.SetActive(false);
+        shopPanel.SetActive(false);
     }
 
     void Update()
@@ -53,6 +55,16 @@ public class CameraController : MonoBehaviour
     {
         settingsPanel.SetActive(false);
         mainmenuPanel.SetActive(true);
+    }
+    public void StartShop()
+    {
+        mainmenuPanel.SetActive(false);
+        shopPanel.SetActive(true);
+    }
+    public void CloseShop()
+    {
+        mainmenuPanel.SetActive(true);
+        shopPanel.SetActive(false);
     }
     public void CloseGame()
     {
