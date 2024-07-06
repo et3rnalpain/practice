@@ -9,7 +9,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject gamePanel;
     [SerializeField] private GameObject mainmenuPanel;
     [SerializeField] private GameObject shopPanel;
-
     [SerializeField] private GameObject settingsPanel;
 
 
@@ -45,6 +44,7 @@ public class CameraController : MonoBehaviour
         point.isGameStarted = true;
         gamePanel.SetActive(true);
         mainmenuPanel.SetActive(false);
+        shopPanel.SetActive(false);
     }
     public void StartSettings()
     {
@@ -58,13 +58,13 @@ public class CameraController : MonoBehaviour
     }
     public void StartShop()
     {
-        mainmenuPanel.SetActive(false);
         shopPanel.SetActive(true);
+        mainmenuPanel.SetActive(false);
     }
     public void CloseShop()
     {
-        mainmenuPanel.SetActive(true);
         shopPanel.SetActive(false);
+        mainmenuPanel.SetActive(true);
     }
     public void CloseGame()
     {

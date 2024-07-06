@@ -45,7 +45,6 @@ public class pause : MonoBehaviour
         Time.timeScale = 1f; 
         isPaused = false; 
         AudioListener.volume=1;
-
     } 
 
 }
