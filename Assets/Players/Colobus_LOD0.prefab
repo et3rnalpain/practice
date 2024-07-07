@@ -365,7 +365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d52872428ce414ab91846d643d15e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {fileID: 0}
   speed: 15
   jumpForce: 10
   scoreText: {fileID: 0}
@@ -379,7 +378,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3219102983830165003}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ed39d873ce8cbcf4d9aa3920ed6dc760, type: 3}

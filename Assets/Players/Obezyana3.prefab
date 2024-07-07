@@ -255,7 +255,7 @@ PrefabInstance:
     - target: {fileID: -1750197354950549132, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0fb328ba9695a4c49ad4be8eb2d83be3, type: 2}
+      objectReference: {fileID: 2100000, guid: d1cd4e374989edf4a9cdf2626ff507da, type: 2}
     - target: {fileID: -1750197354950549132, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 29
@@ -298,7 +298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       propertyPath: m_Name
-      value: Obezyana2
+      value: Obezyana3
       objectReference: {fileID: 0}
     - target: {fileID: 3748359892381204692, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       propertyPath: m_LocalScale.x
