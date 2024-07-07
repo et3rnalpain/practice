@@ -5,6 +5,7 @@ using UnityEngine;
 public class pause : MonoBehaviour
 {
 
+    private bool music = false;
     private Points point;
     [SerializeField] private GameObject scoreText;
     [SerializeField] private GameObject panel;
@@ -36,6 +37,11 @@ public class pause : MonoBehaviour
         panel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        if(AudioListener.volume != 0)
+        {
+            AudioListener.volume=0;
+            music = true;
+        }
     }
 
     public void Resume() 
@@ -43,6 +49,10 @@ public class pause : MonoBehaviour
         panel.SetActive(false); 
         Time.timeScale = 1f; 
         isPaused = false; 
+        if(music)
+            AudioListener.volume = 1;
+        else
+            AudioListener.volume = 0;
     } 
 
 }
