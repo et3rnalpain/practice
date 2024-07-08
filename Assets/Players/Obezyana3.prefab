@@ -365,6 +365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d52872428ce414ab91846d643d15e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: fed6a60be9d489e48a3311659784d0e7, type: 3}
+  - {fileID: 8300000, guid: 38b0e69b71413bb4f9034521efbf2ecb, type: 3}
+  - {fileID: 8300000, guid: 6a317cda3da21c9419a83032a15fd301, type: 3}
+  - {fileID: 8300000, guid: 66fc1334e7dcfbc44ad221ae6328b7c2, type: 3}
   speed: 15
   jumpForce: 10
   scoreText: {fileID: 0}
@@ -378,12 +383,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3219102983830165003}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cd52c527ea1e6e84ea132b55f9b51d22, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.054
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0

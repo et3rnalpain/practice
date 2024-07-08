@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2336775339295239002
+--- !u!1001 &3151667729176786276
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       propertyPath: m_Name
-      value: Colobus_LOD0
+      value: Colobus_LOD0 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       propertyPath: m_IsActive
@@ -314,26 +314,26 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8838079775917441642}
+      addedObject: {fileID: 5690994725862423546}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3008323134249943451}
+      addedObject: {fileID: 187683005562705658}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7620051581704802053}
+      addedObject: {fileID: 7051070181683716178}
   m_SourcePrefab: {fileID: 100100000, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
---- !u!1 &3219102983830165003 stripped
+--- !u!1 &2845589728565774389 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 987300f45a3f86647ad6e04d1d9bc39b, type: 3}
-  m_PrefabInstance: {fileID: 2336775339295239002}
+  m_PrefabInstance: {fileID: 3151667729176786276}
   m_PrefabAsset: {fileID: 0}
---- !u!143 &8838079775917441642
+--- !u!143 &5690994725862423546
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219102983830165003}
+  m_GameObject: {fileID: 2845589728565774389}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -353,37 +353,42 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.33, z: 0}
---- !u!114 &3008323134249943451
+--- !u!114 &187683005562705658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219102983830165003}
+  m_GameObject: {fileID: 2845589728565774389}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9d52872428ce414ab91846d643d15e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: fed6a60be9d489e48a3311659784d0e7, type: 3}
+  - {fileID: 8300000, guid: 38b0e69b71413bb4f9034521efbf2ecb, type: 3}
+  - {fileID: 8300000, guid: 6a317cda3da21c9419a83032a15fd301, type: 3}
+  - {fileID: 8300000, guid: 66fc1334e7dcfbc44ad221ae6328b7c2, type: 3}
   speed: 15
   jumpForce: 10
   scoreText: {fileID: 0}
   gravity: -25
   coinsText: {fileID: 0}
   lineDistance: 3
---- !u!82 &7620051581704802053
+--- !u!82 &7051070181683716178
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219102983830165003}
-  m_Enabled: 0
+  m_GameObject: {fileID: 2845589728565774389}
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ed39d873ce8cbcf4d9aa3920ed6dc760, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.054
+  m_Volume: 0.725
   m_Pitch: 1
   Loop: 1
   Mute: 0
