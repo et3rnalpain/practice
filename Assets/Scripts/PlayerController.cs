@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : sound //MonoBehaviour
 {
     private CharacterController controller;
     private Animator anim;
@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (controller.isGrounded)
                     Jump();
+                soundPlay(sounds[0]);
             }
 
             if (Input.GetKeyDown(KeyCode.S))
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
             if(hit.collider && !dead && hit.collider.tag != "Coin" && hit.collider.tag != "boost")
             {
                 Dead();
+                soundPlay(sounds[1]);
                 point.isGameStarted = false;
                 score = int.Parse(point.pointText.text.ToString());
                 if(PlayerPrefs.GetInt("score") < score )PlayerPrefs.SetInt("score", score);
@@ -161,12 +163,14 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Coin")
         {
             coins++;
+            soundPlay(sounds[2]);
             PlayerPrefs.SetInt("coins", coins);
             coinsText.text = coins.ToString();
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "boost")
         {
+            soundPlay(sounds[3]);
             StartCoroutine(X2Bonus());
             Destroy(other.gameObject);
         }
