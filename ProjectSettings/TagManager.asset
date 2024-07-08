@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - obstacle
   - boost
+  - coin and text off
+  - coin and text off 1
   layers:
   - Default
   - TransparentFX

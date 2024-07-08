@@ -80,7 +80,7 @@ public class Settings : MonoBehaviour
             {
                 coins -= 250;
                 PlayerPrefs.SetInt("coins", coins);
-                CoinAndText2.SetActive(false); 
+                //CoinAndText2.SetActive(false); 
                 swapSkin(index);
             }
         }
