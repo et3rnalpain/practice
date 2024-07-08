@@ -15,6 +15,9 @@ public class Settings : MonoBehaviour
     [SerializeField] private GameObject CoinAndText2;
     [SerializeField] private GameObject score_text;
     [SerializeField] private TMP_Text points_text;
+    [SerializeField] private TMP_Text points_text2;
+    [SerializeField] private GameObject [] mo;
+
     public int current_skin_id = 0;
     public bool isOn;
     private int coins;
@@ -32,6 +35,26 @@ public class Settings : MonoBehaviour
             isOn = false;
             if (volumeText) volumeText.text = "Музыка: выкл";
         }
+        if(PlayerPrefs.GetInt("buying")==1)
+         {
+            Esli1skinKyplen = true;
+            if(CoinAndText1)
+               CoinAndText1.SetActive(false); 
+         }
+        if(PlayerPrefs.GetInt("buying2")==1)
+        {
+            Esli2skinKyplen = true;
+             if(CoinAndText1)
+                 CoinAndText2.SetActive(false); 
+        }
+        swapSkin(PlayerPrefs.GetInt("curent skin"));
+        /*for(int i=0; i<3; i++)
+        {
+            mo[i].SetActive(false);
+            if(i==PlayerPrefs.GetInt("curent skin"))
+                mo[i].SetActive(true);
+        }*/
+
     }
 
     void Update()
@@ -56,31 +79,63 @@ public class Settings : MonoBehaviour
             coins = 0;
             PlayerPrefs.SetInt("coins", coins);
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Esli1skinKyplen=false;
+            Esli2skinKyplen=false;
+            CoinAndText1.SetActive(true); 
+            CoinAndText2.SetActive(true); 
+            PlayerPrefs.SetInt("buying",0);
+            PlayerPrefs.SetInt("buying2",0);
+            PlayerPrefs.SetInt("score",0);
+            PlayerPrefs.SetInt("curent skin",0);
+
+        }
     }
+
+
 
     public void CheckSwapSkin(int index)
     {
-        if (index == 1 && Esli1skinKyplen == false)
+        if (index == 1)
         {
-            Esli1skinKyplen = true;
-            coins = PlayerPrefs.GetInt("coins");
-            if(coins >= 100)
+            if (Esli1skinKyplen == false)
+            { Esli1skinKyplen = true;
+                coins = PlayerPrefs.GetInt("coins");
+                if(coins >= 100)
+                {
+                    coins -= 100;
+                    PlayerPrefs.SetInt("coins", coins);     
+                    CoinAndText1.SetActive(false); 
+                    swapSkin(index);
+                    PlayerPrefs.SetInt("buying",1);
+                    PlayerPrefs.SetInt("curent skin",1);
+                }
+            }
+            else
             {
-                coins -= 100;
-                PlayerPrefs.SetInt("coins", coins);     
-                //CoinAndText1.SetActive(false); 
                 swapSkin(index);
             }
         }
-        if(index == 2 && Esli2skinKyplen == false)
+        if(index == 2)
         {
-            Esli2skinKyplen = true;
-            coins = PlayerPrefs.GetInt("coins");
-            if(coins >= 250)
+            if (Esli2skinKyplen == false)
             {
-                coins -= 250;
-                PlayerPrefs.SetInt("coins", coins);
-                //CoinAndText2.SetActive(false); 
+                Esli2skinKyplen = true;
+                coins = PlayerPrefs.GetInt("coins");
+                if(coins >= 250)
+                {
+                    coins -= 250;
+                    PlayerPrefs.SetInt("coins", coins);
+                    CoinAndText2.SetActive(false); 
+                    swapSkin(index);
+                    PlayerPrefs.SetInt("buying2",1);
+                    PlayerPrefs.SetInt("curent skin",2);
+
+                }
+            }
+            else
+            {
                 swapSkin(index);
             }
         }
@@ -103,6 +158,7 @@ public class Settings : MonoBehaviour
 
         obj.GetComponent<PlayerController>().scoreText = score_text;
         obj.GetComponent<PlayerController>().coinsText = points_text;
+        obj.GetComponent<PlayerController>().coinsText = points_text2;
         
         
     }
