@@ -14,7 +14,7 @@ public class TileGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = pl.transform.GetChild(0).gameObject;
+        //player = pl.transform.GetChild(0).gameObject;
         for(int i = 0; i < startcount; i++)
         {
             Spawn(Random.Range(0,prefabs.Length));

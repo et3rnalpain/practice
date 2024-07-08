@@ -49,7 +49,7 @@ public class Settings : MonoBehaviour
                  CoinAndText2.SetActive(false); 
         }
         int ye = PlayerPrefs.GetInt("curent skin");
-        swapSkin(ye);
+        //swapSkin(ye);
         for(int i=0; i<3; i++)
         {
             mo[i].SetActive(false);
