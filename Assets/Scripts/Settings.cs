@@ -101,7 +101,7 @@ public class Settings : MonoBehaviour
         if (index == 1)
         {
             if (Esli1skinKyplen == false)
-            { Esli1skinKyplen = true;
+            { 
                 coins = PlayerPrefs.GetInt("coins");
                 if(coins >= 100)
                 {
@@ -111,6 +111,7 @@ public class Settings : MonoBehaviour
                     swapSkin(index);
                     PlayerPrefs.SetInt("buying",1);
                     PlayerPrefs.SetInt("curent skin",1);
+                    Esli1skinKyplen = true;
                 }
             }
             else
@@ -122,7 +123,7 @@ public class Settings : MonoBehaviour
         {
             if (Esli2skinKyplen == false)
             {
-                Esli2skinKyplen = true;
+                
                 coins = PlayerPrefs.GetInt("coins");
                 if(coins >= 250)
                 {
@@ -132,6 +133,7 @@ public class Settings : MonoBehaviour
                     swapSkin(index);
                     PlayerPrefs.SetInt("buying2",1);
                     PlayerPrefs.SetInt("curent skin",2);
+                    Esli2skinKyplen = true;
 
                 }
             }

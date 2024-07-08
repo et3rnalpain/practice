@@ -41,6 +41,8 @@ public class PlayerController : sound //MonoBehaviour
     
     private void Update()
     {
+        coins = PlayerPrefs.GetInt("coins");
+        coinsText.text = coins.ToString();
         if(!dead){
             if (Input.GetKeyDown(KeyCode.D))
             {
