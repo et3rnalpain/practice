@@ -10,8 +10,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject mainmenuPanel;
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private GameObject settingsPanel;
-
-
+    [SerializeField] private GameObject tilegenerator;
     public Transform player;
     public GameObject pl;
     private Vector3 offset;
@@ -27,6 +26,7 @@ public class CameraController : MonoBehaviour
         point.isGameStarted = false;
         settingsPanel.SetActive(false);
         shopPanel.SetActive(false);
+
     }
 
     void Update()
@@ -45,6 +45,10 @@ public class CameraController : MonoBehaviour
         gamePanel.SetActive(true);
         mainmenuPanel.SetActive(false);
         shopPanel.SetActive(false);
+                
+        TileGenerator t = tilegenerator.GetComponent<TileGenerator>();
+        t.player = pl.transform.GetChild(0).gameObject;
+
     }
     public void StartSettings()
     {

@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
+using System.Timers;
 
 public class Settings : MonoBehaviour
 {
@@ -47,14 +48,14 @@ public class Settings : MonoBehaviour
              if(CoinAndText1)
                  CoinAndText2.SetActive(false); 
         }
-        swapSkin(PlayerPrefs.GetInt("curent skin"));
-        /*for(int i=0; i<3; i++)
+        int ye = PlayerPrefs.GetInt("curent skin");
+        swapSkin(ye);
+        for(int i=0; i<3; i++)
         {
             mo[i].SetActive(false);
             if(i==PlayerPrefs.GetInt("curent skin"))
                 mo[i].SetActive(true);
-        }*/
-
+        }
     }
 
     void Update()
@@ -159,8 +160,6 @@ public class Settings : MonoBehaviour
         obj.GetComponent<PlayerController>().scoreText = score_text;
         obj.GetComponent<PlayerController>().coinsText = points_text;
         obj.GetComponent<PlayerController>().coinsText = points_text2;
-        
-        
     }
 
     public void MusicOnOff()

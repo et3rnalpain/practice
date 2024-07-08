@@ -706,7 +706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sha: {fileID: 4800000, guid: 99d80d0fdb7c6724c89e77d81bbc026a, type: 3}
-  mat: {fileID: 1432646162}
+  mat: {fileID: 1424157494}
   flatLut: {fileID: 2800000, guid: ad6e386de0e0fb14096d245400d241d3, type: 3}
   bayerTexture: {fileID: 2800000, guid: eac7505667530464e91debe0b4a8492b, type: 3}
   ColorBleed: -1.15
@@ -774,6 +774,7 @@ MonoBehaviour:
   mainmenuPanel: {fileID: 2038456555}
   shopPanel: {fileID: 847748631}
   settingsPanel: {fileID: 1885013960}
+  tilegenerator: {fileID: 2048714464}
   player: {fileID: 0}
   pl: {fileID: 627657155}
 --- !u!1 &259813448
@@ -2136,7 +2137,7 @@ MonoBehaviour:
   - {fileID: 813452309}
   - {fileID: 2139361318}
   - {fileID: 1443229252}
-  current_skin_id: 0
+  current_skin_id: 1
   isOn: 0
 --- !u!1001 &655285064
 PrefabInstance:
@@ -4147,7 +4148,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1432646162
+--- !u!21 &1424157494
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
